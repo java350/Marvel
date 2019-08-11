@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="BratislavaPresporok" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ChatView" customModule="BratislavaPresporok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HT5-ew-Jyo">
+                    <rect key="frame" x="0.0" y="44" width="375" height="668"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="V0Z-QA-hur">
+                    <rect key="frame" x="17" y="737" width="347" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRN-5k-a67">
+                            <rect key="frame" x="0.0" y="0.0" width="271" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="GUq-HT-RCD"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxB-6Q-8Hx">
+                            <rect key="frame" x="272" y="0.0" width="75" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="2Vs-s8-ZpL"/>
+                                <constraint firstAttribute="height" constant="50" id="gnY-Kj-h99"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                            <state key="normal" title="SEND">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V0Z-QA-hur" secondAttribute="trailing" constant="11" id="I8s-rM-uAj"/>
+                <constraint firstItem="V0Z-QA-hur" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="Vpu-AI-4Vv"/>
+                <constraint firstAttribute="bottom" secondItem="V0Z-QA-hur" secondAttribute="bottom" constant="25" id="WMC-t6-4na"/>
+                <constraint firstItem="HT5-ew-Jyo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ad6-rp-tYv"/>
+                <constraint firstItem="V0Z-QA-hur" firstAttribute="top" secondItem="HT5-ew-Jyo" secondAttribute="bottom" constant="25" id="c55-zH-2EV"/>
+                <constraint firstItem="HT5-ew-Jyo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fhr-C8-H3U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HT5-ew-Jyo" secondAttribute="trailing" id="t14-ef-8aQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="buttonSend" destination="sxB-6Q-8Hx" id="C1p-tN-WNU"/>
+                <outlet property="stackViewBottom" destination="V0Z-QA-hur" id="Fok-fU-xZg"/>
+                <outlet property="stackViewBottomConstraint" destination="WMC-t6-4na" id="nGu-fj-5B9"/>
+                <outlet property="tableView" destination="HT5-ew-Jyo" id="6Vp-LY-MVV"/>
+                <outlet property="textFieldContent" destination="wRN-5k-a67" id="8D7-py-yoX"/>
+            </connections>
+            <point key="canvasLocation" x="-254" y="-103"/>
+        </view>
+    </objects>
+</document>
